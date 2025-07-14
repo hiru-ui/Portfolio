@@ -1,0 +1,91 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black !important;
+  color: #eadfdf !important;
+}
+.col-md-9 h1 {
+  font-size: 120px;
+  
+}
+.col-md-9 h2{
+  font-size: 80px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.section-heading{
+  font-size: 80px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.container mt-5 .section-heading{
+     font-size: 80px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container mt-5 pt-5 {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px !important;
+    
+  }
+  #achievements h2{
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  #projects h2{
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  #education h4{
+    font-size: 50px;
+
+  }
+#education ul li{
+  font-size: 25px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  
+  padding-bottom: 0.5rem;
+}
+
+
+#about img {
+  max-width: 500px;
+  border: 5px solid #120311;
+  padding-top: 0%;
+  
+}
+
+.progress-bar {
+  background-color: #2db0ce !important;
+}
+
+
+footer a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffc107 !important; 
+}
+
+@media (max-width: 768px) {
+  #about .row {
+    text-align: center;
+  }
+  #about img {
+    margin-bottom: 1rem;
+  }
+}
