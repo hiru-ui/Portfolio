@@ -260,6 +260,253 @@ body {
   }
 }
 
+/* Activities Section Styles */
+#activities {
+  padding: 80px 0;
+  position: relative;
+}
+
+#activities::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(45, 176, 206, 0.03), rgba(0, 212, 255, 0.03));
+  border-radius: 20px;
+  margin: 0 20px;
+}
+
+.activity-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(45, 176, 206, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.activity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(45, 176, 206, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.activity-card:hover::before {
+  left: 100%;
+}
+
+.activity-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(45, 176, 206, 0.6);
+  box-shadow: 0 20px 40px rgba(45, 176, 206, 0.2);
+}
+
+.activity-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #2db0ce, #00d4ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(45, 176, 206, 0.3);
+  flex-shrink: 0;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2db0ce;
+  margin-bottom: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.activity-organization {
+  font-size: 22px;
+  font-weight: 600;
+  color: #eadfdf;
+  margin-bottom: 8px;
+}
+
+.activity-location {
+  font-size: 18px;
+  color: #b0b0b0;
+  margin-bottom: 20px;
+}
+
+.activity-description p {
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.activity-badge {
+  display: inline-block;
+}
+
+.badge-text {
+  background: linear-gradient(135deg, #2db0ce, #00d4ff);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Achievements Section Styles */
+#achievements {
+  padding: 80px 0;
+  position: relative;
+}
+
+#achievements::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(45, 176, 206, 0.03), rgba(0, 212, 255, 0.03));
+  border-radius: 20px;
+  margin: 0 20px;
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(45, 176, 206, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(45, 176, 206, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.achievement-card:hover::before {
+  left: 100%;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(45, 176, 206, 0.6);
+  box-shadow: 0 20px 40px rgba(45, 176, 206, 0.2);
+}
+
+.achievement-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #2db0ce, #00d4ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(45, 176, 206, 0.3);
+  flex-shrink: 0;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2db0ce;
+  margin-bottom: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.achievement-description p {
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.achievement-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.skill-tag {
+  background: rgba(45, 176, 206, 0.2);
+  color: #2db0ce;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(45, 176, 206, 0.3);
+}
+
+.achievement-badge {
+  display: inline-block;
+}
+
+/* Responsive Design for Activities & Achievements */
+@media (max-width: 768px) {
+  .activity-card, .achievement-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .activity-icon, .achievement-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    margin: 0 auto 20px;
+  }
+  
+  .activity-title, .achievement-title {
+    font-size: 24px;
+  }
+  
+  .activity-organization {
+    font-size: 18px;
+  }
+  
+  .achievement-skills {
+    justify-content: center;
+  }
+}
+
 .navbar-brand {
   font-weight: bold;
   font-size: 1.5rem;
