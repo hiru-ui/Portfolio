@@ -7,92 +7,70 @@ body {
 
 /* Hero Section Styles */
 #about {
-  padding: 120px 0 80px 0;
-  position: relative;
+  padding: 100px 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.hero-container {
+.hero-section {
   width: 100%;
-  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.hero-content {
+.hero-layout {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 80px;
-  min-height: 70vh;
+  gap: 100px;
+  width: 100%;
 }
 
-.hero-image-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.profile-image-container {
   flex: 0 0 auto;
 }
 
-.hero-image-wrapper {
-  position: relative;
+.profile-image {
   width: 400px;
   height: 400px;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.hero-image:hover {
-  transform: scale(1.02);
+.profile-image:hover {
+  transform: scale(1.05);
+  border-color: rgba(45, 176, 206, 0.5);
 }
 
-.hero-text-section {
+.hero-text-container {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.hero-greeting {
-  margin-bottom: 30px;
-}
-
-.hero-title {
-  font-size: 120px;
-  font-weight: 800;
+.hero-main-text {
+  font-size: 140px;
+  font-weight: 700;
   color: #eadfdf;
-  margin: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0 0 20px 0;
   line-height: 1.1;
-  letter-spacing: -2px;
-}
-
-.name-highlight {
-  color: #ffffff;
-  font-weight: 300;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -3px;
 }
 
 .hero-subtitle {
-  font-size: 24px;
-  color: #a0a0a0;
-  font-weight: 300;
+  font-size: 28px;
+  color: #b0b0b0;
+  font-weight: 400;
   margin-bottom: 20px;
-  letter-spacing: 1px;
+  margin-top: 0;
 }
 
-.hero-divider {
-  width: 80px;
-  height: 3px;
-  background: #ffffff;
-  border-radius: 2px;
+.hero-line {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(135deg, #2db0ce, #00d4ff);
 }
 
 /* About Description Section */
@@ -219,29 +197,39 @@ body {
 }
 
 /* Responsive Design for Hero Section */
-@media (max-width: 1200px) {
-  .hero-title {
-    font-size: 100px;
+@media (max-width: 1400px) {
+  .hero-main-text {
+    font-size: 120px;
   }
   
-  .hero-content {
-    gap: 60px;
+  .hero-layout {
+    gap: 80px;
   }
   
-  .hero-image-wrapper {
+  .profile-image {
     width: 350px;
     height: 350px;
   }
 }
 
+@media (max-width: 1200px) {
+  .hero-main-text {
+    font-size: 100px;
+  }
+  
+  .hero-layout {
+    gap: 60px;
+  }
+}
+
 @media (max-width: 992px) {
-  .hero-content {
+  .hero-layout {
     flex-direction: column;
     text-align: center;
     gap: 40px;
   }
   
-  .hero-title {
+  .hero-main-text {
     font-size: 80px;
   }
   
@@ -249,12 +237,12 @@ body {
     font-size: 20px;
   }
   
-  .hero-image-wrapper {
+  .profile-image {
     width: 300px;
     height: 300px;
   }
   
-  .hero-divider {
+  .hero-line {
     margin: 0 auto;
   }
 }
@@ -264,12 +252,7 @@ body {
     padding: 100px 0 60px 0;
   }
   
-  .about-card {
-    padding: 40px 30px;
-    margin: 0 15px;
-  }
-  
-  .hero-title {
+  .hero-main-text {
     font-size: 60px;
   }
   
@@ -277,29 +260,13 @@ body {
     font-size: 18px;
   }
   
-  .hero-image-wrapper {
+  .profile-image {
     width: 250px;
     height: 250px;
   }
   
-  .hero-content {
+  .hero-layout {
     gap: 30px;
-  }
-  
-  .about-heading {
-    font-size: 36px;
-  }
-  
-  .about-paragraph {
-    font-size: 16px;
-  }
-  
-  .about-highlights {
-    gap: 15px;
-  }
-  
-  .highlight-item {
-    padding: 10px 15px;
   }
 }
 
