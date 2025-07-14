@@ -7,70 +7,69 @@ body {
 
 /* Hero Section Styles */
 #about {
-  padding: 100px 0;
+  padding: 120px 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
 
-.hero-section {
+.reference-hero-section {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.hero-layout {
+.reference-hero-container {
   display: flex;
   align-items: center;
-  gap: 100px;
+  gap: 80px;
   width: 100%;
+  justify-content: center;
 }
 
-.profile-image-container {
+.reference-profile-container {
   flex: 0 0 auto;
 }
 
-.profile-image {
-  width: 400px;
-  height: 400px;
+.reference-profile-image {
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.1);
+  border: none;
   transition: all 0.3s ease;
 }
 
-.profile-image:hover {
-  transform: scale(1.05);
-  border-color: rgba(45, 176, 206, 0.5);
+.reference-profile-image:hover {
+  transform: scale(1.02);
 }
 
-.hero-text-container {
+.reference-text-container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.hero-main-text {
-  font-size: 140px;
-  font-weight: 700;
-  color: #eadfdf;
+.reference-main-text {
+  font-size: 120px;
+  font-weight: 800;
+  color: #ffffff;
   margin: 0 0 20px 0;
-  line-height: 1.1;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: -3px;
+  line-height: 1.0;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: -2px;
 }
 
-.hero-subtitle {
-  font-size: 28px;
-  color: #b0b0b0;
-  font-weight: 400;
-  margin-bottom: 20px;
+.reference-subtitle {
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 0;
   margin-top: 0;
-}
-
-.hero-line {
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(135deg, #2db0ce, #00d4ff);
+  font-family: 'Arial', sans-serif;
 }
 
 /* About Description Section */
@@ -197,53 +196,43 @@ body {
 }
 
 /* Responsive Design for Hero Section */
-@media (max-width: 1400px) {
-  .hero-main-text {
-    font-size: 120px;
-  }
-  
-  .hero-layout {
-    gap: 80px;
-  }
-  
-  .profile-image {
-    width: 350px;
-    height: 350px;
-  }
-}
-
 @media (max-width: 1200px) {
-  .hero-main-text {
+  .reference-main-text {
     font-size: 100px;
   }
   
-  .hero-layout {
+  .reference-hero-container {
     gap: 60px;
+  }
+  
+  .reference-profile-image {
+    width: 380px;
+    height: 380px;
+  }
+  
+  .reference-subtitle {
+    font-size: 28px;
   }
 }
 
 @media (max-width: 992px) {
-  .hero-layout {
+  .reference-hero-container {
     flex-direction: column;
     text-align: center;
     gap: 40px;
   }
   
-  .hero-main-text {
+  .reference-main-text {
     font-size: 80px;
   }
   
-  .hero-subtitle {
-    font-size: 20px;
+  .reference-subtitle {
+    font-size: 24px;
   }
   
-  .profile-image {
+  .reference-profile-image {
     width: 300px;
     height: 300px;
-  }
-  
-  .hero-line {
-    margin: 0 auto;
   }
 }
 
@@ -252,20 +241,20 @@ body {
     padding: 100px 0 60px 0;
   }
   
-  .hero-main-text {
+  .reference-main-text {
     font-size: 60px;
   }
   
-  .hero-subtitle {
+  .reference-subtitle {
     font-size: 18px;
   }
   
-  .profile-image {
+  .reference-profile-image {
     width: 250px;
     height: 250px;
   }
   
-  .hero-layout {
+  .reference-hero-container {
     gap: 30px;
   }
 }
