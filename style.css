@@ -5,196 +5,113 @@ body {
   color: #eadfdf !important;
 }
 
-/* About Section Styles */
+/* Hero Section Styles */
 #about {
-  padding: 100px 0;
+  padding: 120px 0 80px 0;
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
 }
 
-#about::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(45, 176, 206, 0.03), rgba(0, 212, 255, 0.03));
-  border-radius: 20px;
-  margin: 0 20px;
-}
-
-.about-container {
+.hero-container {
   width: 100%;
   position: relative;
-  z-index: 2;
 }
 
-.about-content {
+.hero-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
-  gap: 40px;
+  justify-content: center;
+  gap: 80px;
+  min-height: 70vh;
 }
 
-.profile-section {
+.hero-image-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  flex: 0 0 auto;
 }
 
-.profile-image-wrapper {
+.hero-image-wrapper {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 400px;
+  height: 400px;
 }
 
-.profile-glow {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background: linear-gradient(135deg, #2db0ce, #00d4ff);
-  border-radius: 50%;
-  opacity: 0.3;
-  filter: blur(20px);
-  animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.05); opacity: 0.5; }
-}
-
-.profile-image {
+.hero-image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  position: relative;
-  z-index: 2;
+  border: 4px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.profile-image:hover {
-  transform: scale(1.05);
+.hero-image:hover {
+  transform: scale(1.02);
 }
 
-.profile-border {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border: 3px solid transparent;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #2db0ce, #00d4ff);
-  background-clip: padding-box;
-  z-index: 1;
-}
-
-.profile-status {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(45, 176, 206, 0.1);
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: 1px solid rgba(45, 176, 206, 0.3);
-}
-
-.status-indicator {
-  width: 12px;
-  height: 12px;
-  background: #00ff88;
-  border-radius: 50%;
-  animation: blink 2s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-.status-text {
-  font-size: 14px;
-  color: #2db0ce;
-  font-weight: 500;
-}
-
-.intro-section {
+.hero-text-section {
   flex: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.greeting-text {
-  margin-bottom: 20px;
+.hero-greeting {
+  margin-bottom: 30px;
 }
 
-.greeting-wave {
-  font-size: 60px;
-  display: inline-block;
-  animation: wave 2s ease-in-out infinite;
-}
-
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(20deg); }
-  75% { transform: rotate(-10deg); }
-}
-
-.greeting-title {
-  font-size: 72px;
-  font-weight: 700;
+.hero-title {
+  font-size: 120px;
+  font-weight: 800;
   color: #eadfdf;
-  margin: 20px 0;
+  margin: 0;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -2px;
 }
 
 .name-highlight {
-  background: linear-gradient(135deg, #2db0ce, #00d4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ffffff;
+  font-weight: 300;
 }
 
-.role-title {
-  font-size: 32px;
-  color: #b0b0b0;
-  font-weight: 400;
+.hero-subtitle {
+  font-size: 24px;
+  color: #a0a0a0;
+  font-weight: 300;
   margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
-.title-divider {
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(135deg, #2db0ce, #00d4ff);
-  margin: 0 auto;
+.hero-divider {
+  width: 80px;
+  height: 3px;
+  background: #ffffff;
   border-radius: 2px;
 }
 
-.about-description {
+/* About Description Section */
+.about-description-section {
   display: flex;
   justify-content: center;
+  padding: 80px 0;
 }
 
 .about-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(45, 176, 206, 0.3);
   border-radius: 20px;
-  padding: 50px 40px;
+  padding: 60px 50px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
 }
 
@@ -234,7 +151,7 @@ body {
 }
 
 .about-heading {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
   color: #2db0ce;
   text-align: center;
@@ -301,53 +218,76 @@ body {
   font-size: 14px;
 }
 
-/* Responsive Design for About Section */
+/* Responsive Design for Hero Section */
 @media (max-width: 1200px) {
-  .greeting-title {
-    font-size: 60px;
+  .hero-title {
+    font-size: 100px;
   }
   
-  .about-heading {
-    font-size: 40px;
+  .hero-content {
+    gap: 60px;
+  }
+  
+  .hero-image-wrapper {
+    width: 350px;
+    height: 350px;
   }
 }
 
 @media (max-width: 992px) {
-  .about-content {
+  .hero-content {
     flex-direction: column;
     text-align: center;
+    gap: 40px;
   }
   
-  .greeting-title {
-    font-size: 48px;
+  .hero-title {
+    font-size: 80px;
   }
   
-  .role-title {
-    font-size: 28px;
+  .hero-subtitle {
+    font-size: 20px;
   }
   
-  .profile-image-wrapper {
-    width: 220px;
-    height: 220px;
+  .hero-image-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .hero-divider {
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
   #about {
-    padding: 80px 0;
+    padding: 100px 0 60px 0;
   }
   
   .about-card {
-    padding: 40px 25px;
+    padding: 40px 30px;
     margin: 0 15px;
   }
   
-  .greeting-title {
-    font-size: 36px;
+  .hero-title {
+    font-size: 60px;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  
+  .hero-image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .hero-content {
+    gap: 30px;
   }
   
   .about-heading {
-    font-size: 32px;
+    font-size: 36px;
   }
   
   .about-paragraph {
@@ -360,15 +300,6 @@ body {
   
   .highlight-item {
     padding: 10px 15px;
-  }
-  
-  .profile-image-wrapper {
-    width: 180px;
-    height: 180px;
-  }
-  
-  .greeting-wave {
-    font-size: 40px;
   }
 }
 
