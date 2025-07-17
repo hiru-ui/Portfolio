@@ -12,13 +12,30 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background: linear-gradient(135deg, #000000 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(45, 176, 206, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(45, 176, 206, 0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .reference-hero-section {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .reference-hero-container {
@@ -31,6 +48,52 @@ body {
 
 .reference-profile-container {
   flex: 0 0 auto;
+  position: relative;
+}
+
+.reference-profile-container::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+  background: linear-gradient(45deg, 
+    rgba(45, 176, 206, 0.3) 0%, 
+    rgba(0, 212, 255, 0.2) 25%, 
+    rgba(45, 176, 206, 0.1) 50%, 
+    rgba(0, 212, 255, 0.2) 75%, 
+    rgba(45, 176, 206, 0.3) 100%);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+}
+
+.reference-profile-container::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: linear-gradient(-45deg, 
+    rgba(45, 176, 206, 0.2) 0%, 
+    rgba(0, 212, 255, 0.3) 25%, 
+    rgba(45, 176, 206, 0.1) 50%, 
+    rgba(0, 212, 255, 0.2) 75%, 
+    rgba(45, 176, 206, 0.3) 100%);
+  border-radius: 50%;
+  animation: rotate 15s linear infinite reverse;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .reference-profile-image {
@@ -38,12 +101,17 @@ body {
   height: 450px;
   border-radius: 50%;
   object-fit: cover;
-  border: none;
+  border: 4px solid rgba(45, 176, 206, 0.5);
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px rgba(45, 176, 206, 0.3);
 }
 
 .reference-profile-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
+  border-color: rgba(45, 176, 206, 0.8);
+  box-shadow: 0 25px 80px rgba(45, 176, 206, 0.4);
 }
 
 .reference-text-container {
@@ -51,25 +119,62 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+}
+
+.reference-text-container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  background: linear-gradient(135deg, 
+    rgba(45, 176, 206, 0.05) 0%, 
+    rgba(0, 212, 255, 0.03) 25%, 
+    transparent 50%, 
+    rgba(45, 176, 206, 0.03) 75%, 
+    rgba(0, 212, 255, 0.05) 100%);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.8;
 }
 
 .reference-main-text {
   font-size: 120px;
   font-weight: 800;
-  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #2db0ce 50%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0 0 20px 0;
   line-height: 1.0;
   font-family: 'Arial', sans-serif;
   letter-spacing: -2px;
+  text-shadow: 0 0 30px rgba(45, 176, 206, 0.3);
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(45, 176, 206, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 20px rgba(45, 176, 206, 0.6));
+  }
 }
 
 .reference-subtitle {
   font-size: 32px;
-  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #2db0ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 500;
   margin-bottom: 0;
   margin-top: 0;
   font-family: 'Arial', sans-serif;
+  text-shadow: 0 0 15px rgba(45, 176, 206, 0.2);
 }
 
 /* About Description Section */
