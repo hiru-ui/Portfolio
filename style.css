@@ -593,6 +593,35 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  background: rgba(45, 176, 206, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(45, 176, 206, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(45, 176, 206, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.skill-item:hover::before {
+  left: 100%;
+}
+
+.skill-item:hover {
+  background: rgba(45, 176, 206, 0.1);
+  border-color: rgba(45, 176, 206, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(45, 176, 206, 0.2);
 }
 
 .skill-name {
@@ -600,24 +629,37 @@ body {
   font-weight: 600;
   color: #eadfdf;
   min-width: 100px;
+  position: relative;
+  z-index: 2;
 }
 
 .skill-progress {
   flex: 1;
-  height: 12px;
+  height: 16px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(45, 176, 206, 0.2);
 }
 
 .skill-bar {
   height: 100%;
-  background: linear-gradient(135deg, #2db0ce, #00d4ff);
-  border-radius: 10px;
+  background: linear-gradient(135deg, #2db0ce 0%, #00d4ff 50%, #2db0ce 100%);
+  background-size: 200% 100%;
+  border-radius: 12px;
   width: 0%;
-  transition: width 2s ease-in-out;
+  transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  animation: gradientMove 3s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(45, 176, 206, 0.4);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .skill-bar::after {
@@ -627,21 +669,107 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.4) 30%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    rgba(255, 255, 255, 0.4) 70%, 
+    transparent 100%);
+  animation: shimmer 3s infinite;
+  border-radius: 12px;
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% { 
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 
 .skill-percentage {
   font-size: 16px;
   font-weight: 600;
-  color: #2db0ce;
+  background: linear-gradient(135deg, #2db0ce, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   min-width: 50px;
   text-align: right;
+  position: relative;
+  z-index: 2;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Skill-specific colors and icons */
+.skill-item[data-skill="html"] .skill-bar {
+  background: linear-gradient(135deg, #e34f26 0%, #f16529 50%, #e34f26 100%);
+  background-size: 200% 100%;
+}
+
+.skill-item[data-skill="css"] .skill-bar {
+  background: linear-gradient(135deg, #1572b6 0%, #33a9dc 50%, #1572b6 100%);
+  background-size: 200% 100%;
+}
+
+.skill-item[data-skill="javascript"] .skill-bar {
+  background: linear-gradient(135deg, #f7df1e 0%, #ffed4e 50%, #f7df1e 100%);
+  background-size: 200% 100%;
+}
+
+.skill-item[data-skill="bootstrap"] .skill-bar {
+  background: linear-gradient(135deg, #7952b3 0%, #9a6dff 50%, #7952b3 100%);
+  background-size: 200% 100%;
+}
+
+.skill-item[data-skill="git"] .skill-bar {
+  background: linear-gradient(135deg, #f05032 0%, #ff6b47 50%, #f05032 100%);
+  background-size: 200% 100%;
+}
+
+/* Enhanced skill icons */
+.skill-item::after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.skill-item:hover::after {
+  opacity: 0.6;
+}
+
+.skill-item[data-skill="html"]::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e34f26'%3E%3Cpath d='M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z'/%3E%3C/svg%3E");
+}
+
+.skill-item[data-skill="css"]::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231572b6'%3E%3Cpath d='M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z'/%3E%3C/svg%3E");
+}
+
+.skill-item[data-skill="javascript"]::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f7df1e'%3E%3Cpath d='M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z'/%3E%3C/svg%3E");
+}
+
+.skill-item[data-skill="bootstrap"]::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237952b3'%3E%3Cpath d='M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 0v24H0V0h24zM7.279 6.057v11.886h5.036c2.671 0 4.259-1.323 4.259-3.466 0-1.52-.906-2.591-2.174-2.974v-.068c1.117-.417 1.834-1.406 1.834-2.591 0-1.927-1.387-2.787-3.771-2.787H7.28z'/%3E%3C/svg%3E");
+}
+
+.skill-item[data-skill="git"]::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f05032'%3E%3Cpath d='M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187'/%3E%3C/svg%3E");
 }
 
 /* Responsive Design */
