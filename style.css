@@ -653,7 +653,9 @@ body {
   transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   animation: gradientMove 3s ease-in-out infinite;
-  box-shadow: 0 2px 8px rgba(45, 176, 206, 0.4);
+  box-shadow: 0 2px 8px rgba(45, 176, 206, 0.4), 
+              0 0 15px rgba(45, 176, 206, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 @keyframes gradientMove {
@@ -709,28 +711,43 @@ body {
 
 /* Skill-specific colors and icons */
 .skill-item[data-skill="html"] .skill-bar {
-  background: linear-gradient(135deg, #e34f26 0%, #f16529 50%, #e34f26 100%);
+  background: linear-gradient(135deg, #2db0ce 0%, #00d4ff 50%, #2db0ce 100%);
   background-size: 200% 100%;
+  box-shadow: 0 2px 8px rgba(45, 176, 206, 0.4), 
+              0 0 15px rgba(45, 176, 206, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .skill-item[data-skill="css"] .skill-bar {
-  background: linear-gradient(135deg, #1572b6 0%, #33a9dc 50%, #1572b6 100%);
+  background: linear-gradient(135deg, #2db0ce 0%, #00d4ff 50%, #2db0ce 100%);
   background-size: 200% 100%;
+  box-shadow: 0 2px 8px rgba(45, 176, 206, 0.4), 
+              0 0 15px rgba(45, 176, 206, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .skill-item[data-skill="javascript"] .skill-bar {
-  background: linear-gradient(135deg, #f7df1e 0%, #ffed4e 50%, #f7df1e 100%);
+  background: linear-gradient(135deg, #2db0ce 0%, #00d4ff 50%, #2db0ce 100%);
   background-size: 200% 100%;
+  box-shadow: 0 2px 8px rgba(45, 176, 206, 0.4), 
+              0 0 15px rgba(45, 176, 206, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .skill-item[data-skill="bootstrap"] .skill-bar {
-  background: linear-gradient(135deg, #7952b3 0%, #9a6dff 50%, #7952b3 100%);
+  background: linear-gradient(135deg, #2db0ce 0%, #00d4ff 50%, #2db0ce 100%);
   background-size: 200% 100%;
+  box-shadow: 0 2px 8px rgba(45, 176, 206, 0.4), 
+              0 0 15px rgba(45, 176, 206, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .skill-item[data-skill="git"] .skill-bar {
-  background: linear-gradient(135deg, #f05032 0%, #ff6b47 50%, #f05032 100%);
+  background: linear-gradient(135deg, #2db0ce 0%, #00d4ff 50%, #2db0ce 100%);
   background-size: 200% 100%;
+  box-shadow: 0 2px 8px rgba(45, 176, 206, 0.4), 
+              0 0 15px rgba(45, 176, 206, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Enhanced skill icons */
