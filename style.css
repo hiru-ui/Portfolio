@@ -1323,6 +1323,24 @@ body {
   border-color: rgba(45, 176, 206, 0.3);
 }
 
+.tech-tag.python {
+  background: rgba(55, 118, 171, 0.2);
+  color: #3776ab;
+  border-color: rgba(55, 118, 171, 0.3);
+}
+
+.tech-tag.ml {
+  background: rgba(255, 111, 0, 0.2);
+  color: #ff6f00;
+  border-color: rgba(255, 111, 0, 0.3);
+}
+
+.tech-tag.ai {
+  background: rgba(138, 43, 226, 0.2);
+  color: #8a2be2;
+  border-color: rgba(138, 43, 226, 0.3);
+}
+
 /* Responsive Design for Projects */
 @media (min-width: 992px) {
   .project-card {
